@@ -15,6 +15,9 @@ class QudsCollectionPagination<T> extends StatelessWidget {
   /// The current page items.
   final List<T> currentPageItems;
 
+  /// A header to be shown above the widgets
+  final Widget? header;
+
   /// The builder of each child.
   final Widget Function(
     BuildContext context,
@@ -56,6 +59,7 @@ class QudsCollectionPagination<T> extends StatelessWidget {
       this.crossAxisAlignment = CrossAxisAlignment.start,
       this.itemsPadding,
       required this.total,
+      this.header,
       Key? key})
       : assert(selectedPage >= 1),
         assert(total >= 0),
@@ -192,7 +196,7 @@ class QudsCollectionPagination<T> extends StatelessWidget {
   }
 
   Widget _buildNumButton(int? i, BuildContext context) {
-    var style = Theme.of(context).textTheme.bodyText1!;
+    var style = Theme.of(context).textTheme.bodyLarge!;
     var border = BorderRadius.circular(3);
     return Material(
       color: Colors.transparent,
@@ -214,57 +218,57 @@ class QudsCollectionPagination<T> extends StatelessWidget {
 
   Widget _buildResultsStatistics(BuildContext context) {
     return const SizedBox();
-    var isPortrait = MediaQuery.of(context).orientation == Orientation.portrait;
-    var style = const TextStyle(fontSize: 18);
+    // var isPortrait = MediaQuery.of(context).orientation == Orientation.portrait;
+    // var style = const TextStyle(fontSize: 18);
 
-    var result = Container(
-      padding: const EdgeInsets.symmetric(horizontal: 5),
-      child: SingleChildScrollView(
-          scrollDirection: isPortrait ? Axis.horizontal : Axis.vertical,
-          child: Container(
-              child: _widgetsCollection(
-            isRow: isPortrait,
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            children: <Widget>[
-              Container(
-                  decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(4),
-                      boxShadow: const [
-                        BoxShadow(
-                          color: Colors.black38,
-                          blurRadius: 2,
-                        )
-                      ],
-                      color: Theme.of(context).scaffoldBackgroundColor),
-                  child: _widgetsCollection(
-                    isRow: isPortrait,
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: <Widget>[
-                      Text(
-                        ((selectedPage - 1) * resultsPerPage + 1).toString() +
-                            ' - ' +
-                            ((selectedPage - 1) * resultsPerPage +
-                                    currentPageItems.length)
-                                .toString(),
-                        style: style,
-                      ),
-                      Text(
-                        isPortrait ? ' \\ ' : 'ــــ',
-                        style: style.copyWith(
-                            height: isPortrait ? null : 0,
-                            fontWeight: FontWeight.bold),
-                      ),
-                      Text(
-                        total.toString(),
-                        style: style,
-                      ),
-                    ],
-                  )),
-            ],
-          ))),
-    );
+    // var result = Container(
+    //   padding: const EdgeInsets.symmetric(horizontal: 5),
+    //   child: SingleChildScrollView(
+    //       scrollDirection: isPortrait ? Axis.horizontal : Axis.vertical,
+    //       child: Container(
+    //           child: _widgetsCollection(
+    //         isRow: isPortrait,
+    //         mainAxisAlignment: MainAxisAlignment.spaceBetween,
+    //         children: <Widget>[
+    //           Container(
+    //               decoration: BoxDecoration(
+    //                   borderRadius: BorderRadius.circular(4),
+    //                   boxShadow: const [
+    //                     BoxShadow(
+    //                       color: Colors.black38,
+    //                       blurRadius: 2,
+    //                     )
+    //                   ],
+    //                   color: Theme.of(context).scaffoldBackgroundColor),
+    //               child: _widgetsCollection(
+    //                 isRow: isPortrait,
+    //                 mainAxisAlignment: MainAxisAlignment.center,
+    //                 children: <Widget>[
+    //                   Text(
+    //                     ((selectedPage - 1) * resultsPerPage + 1).toString() +
+    //                         ' - ' +
+    //                         ((selectedPage - 1) * resultsPerPage +
+    //                                 currentPageItems.length)
+    //                             .toString(),
+    //                     style: style,
+    //                   ),
+    //                   Text(
+    //                     isPortrait ? ' \\ ' : 'ــــ',
+    //                     style: style.copyWith(
+    //                         height: isPortrait ? null : 0,
+    //                         fontWeight: FontWeight.bold),
+    //                   ),
+    //                   Text(
+    //                     total.toString(),
+    //                     style: style,
+    //                   ),
+    //                 ],
+    //               )),
+    //         ],
+    //       ))),
+    // );
 
-    return result;
+    // return result;
   }
 
   Widget _buildDecoratedBox(BuildContext context, Widget child,
@@ -309,6 +313,7 @@ class QudsCollectionPagination<T> extends StatelessWidget {
       child: Column(
         crossAxisAlignment: crossAxisAlignment,
         children: [
+          if (header != null) header!,
           for (var i = 0; i < length; i++) ...[
             itemBuilder(context, i, currentPageItems[i]),
             if (i != length - 1)

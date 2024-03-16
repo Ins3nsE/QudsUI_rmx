@@ -71,3 +71,9 @@
 ## [0.0.7+7]
 * Updated `QudsPopupMenu`.
 * Applied flutter lints .
+
+## [0.0.7+9]
+* Added header widget to `QudsCollectionPagination`.
+
+## [0.0.7+10]
+* Added ability to show/hide `QudsLighDrawer` back icon button.

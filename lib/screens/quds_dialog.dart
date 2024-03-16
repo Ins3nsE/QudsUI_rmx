@@ -251,7 +251,7 @@ class _QudsDialog extends StatelessWidget {
                   ],
                   if (title != null)
                     DefaultTextStyle(
-                        style: theme.textTheme.headline5!, child: title!),
+                        style: theme.textTheme.headlineSmall!, child: title!),
                 ],
               ),
               const SizedBox(height: 5),

@@ -38,7 +38,7 @@ Future showQudsToast(BuildContext context,
                         )
                       ],
                       DefaultTextStyle(
-                          style: theme.primaryTextTheme.bodyText1!
+                          style: theme.primaryTextTheme.bodyLarge!
                               .copyWith(fontSize: 18),
                           child: content ??
                               const SizedBox(
@@ -57,7 +57,7 @@ Future showQudsToast(BuildContext context,
   );
 
   snackContent = DefaultTextStyle(
-      style: theme.primaryTextTheme.bodyText1!.copyWith(fontSize: 18),
+      style: theme.primaryTextTheme.bodyLarge!.copyWith(fontSize: 18),
       child: snackContent);
 
   snackContent = IconTheme(data: theme.primaryIconTheme, child: snackContent);

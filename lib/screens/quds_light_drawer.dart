@@ -17,14 +17,17 @@ class QudsLightDrawer extends StatelessWidget {
   /// The body of this drawer.
   final Widget? body;
 
+  final bool? showBackIconButton;
+
   /// Create an instance of [QudsLightDrawer]
-  const QudsLightDrawer({
-    Key? key,
-    this.body,
-    this.titleButton,
-    this.bottomButton,
-    this.bottomAboutButton,
-  }) : super(key: key);
+  const QudsLightDrawer(
+      {Key? key,
+      this.body,
+      this.titleButton,
+      this.bottomButton,
+      this.bottomAboutButton,
+      this.showBackIconButton})
+      : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -89,7 +92,7 @@ class QudsLightDrawer extends StatelessWidget {
   Widget _buildHeader(BuildContext context) {
     Widget result =
         Row(mainAxisAlignment: MainAxisAlignment.spaceBetween, children: [
-      const QudsBackIconButton(),
+      if (showBackIconButton != false) const QudsBackIconButton(),
       Expanded(child: Container()),
       if (titleButton != null) titleButton!
     ]);
@@ -110,7 +113,7 @@ class QudsLightDrawer extends StatelessWidget {
     var theme = Theme.of(context);
     Widget result = IconTheme(data: theme.primaryIconTheme, child: w);
     result = DefaultTextStyle(
-        style: theme.primaryTextTheme.bodyText1!.copyWith(fontSize: 18),
+        style: theme.primaryTextTheme.bodyLarge!.copyWith(fontSize: 18),
         child: result);
     return result;
   }

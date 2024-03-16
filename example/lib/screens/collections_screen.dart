@@ -43,7 +43,7 @@ class _State extends State<CollectionsScreen> {
         child: Column(
           children: [
             TabBar(
-                labelColor: Theme.of(context).textTheme.bodyText1!.color,
+                labelColor: Theme.of(context).textTheme.bodyLarge!.color,
                 tabs: [
                   Tab(
                     text: 'Pagination',
@@ -70,6 +70,7 @@ class _State extends State<CollectionsScreen> {
   Widget _buildPagining() {
     return Container(
       child: QudsCollectionPagination<_ExampleModel>(
+        header: Row(children: [Text('Header')]),
         resultsPerPage: itemsPerPage,
         itemsPadding: EdgeInsets.all(2),
         onResultsPerPageChanged: (p) {
