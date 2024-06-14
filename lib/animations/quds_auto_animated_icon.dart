@@ -1,7 +1,7 @@
 import 'dart:async';
 
 import 'package:flutter/material.dart';
-import '../quds_ui_kit.dart';
+import '../quds_ui_kit_rmx.dart';
 
 /// An auto [AnimatedIconData] animator.
 class QudsAutoAnimatedIcon extends StatefulWidget {

@@ -1,7 +1,7 @@
 // ignore_for_file: overridden_fields
 
 import 'package:flutter/material.dart';
-import 'package:quds_ui_kit/quds_ui_kit.dart';
+import 'package:quds_ui_kit_rmx/quds_ui_kit_rmx.dart';
 
 /// A page route with rotation transition.
 class QudsRotatePageRoute<T> extends QudsTransitionPageRoute<T> {

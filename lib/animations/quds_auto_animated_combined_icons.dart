@@ -2,7 +2,7 @@ import 'dart:async';
 
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
-import 'package:quds_ui_kit/animations/quds_animated_combined_icons.dart';
+import 'package:quds_ui_kit_rmx/animations/quds_animated_combined_icons.dart';
 
 /// An auto animated widget that combines two [IconData]s with
 /// transition from the first to the second and reverse this transition.

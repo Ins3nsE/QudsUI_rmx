@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:quds_ui_kit/quds_ui_kit.dart';
+import 'package:quds_ui_kit_rmx/quds_ui_kit_rmx.dart';
 
 /// A page route with zoom transition.
 class QudsZoomPageRoute<T> extends QudsTransitionPageRoute<T> {

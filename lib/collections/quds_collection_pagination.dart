@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:quds_ui_kit/quds_ui_kit.dart';
+import 'package:quds_ui_kit_rmx/quds_ui_kit_rmx.dart';
 
 /// A widget that show list of items with pagining.
 class QudsCollectionPagination<T> extends StatelessWidget {

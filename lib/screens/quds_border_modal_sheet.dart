@@ -3,7 +3,7 @@
 import 'dart:math';
 
 import 'package:flutter/material.dart';
-import 'package:quds_ui_kit/animations/quds_animations.dart';
+import 'package:quds_ui_kit_rmx/animations/quds_animations.dart';
 
 class _QudsBorderModalSheet extends StatefulWidget {
   final Widget Function(BuildContext context) builder;

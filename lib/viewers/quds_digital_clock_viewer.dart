@@ -1,6 +1,6 @@
 import 'dart:async';
 import 'package:flutter/material.dart';
-import 'package:quds_ui_kit/quds_ui_kit.dart';
+import 'package:quds_ui_kit_rmx/quds_ui_kit_rmx.dart';
 
 /// A live digital clock viewer with digits flipping effect.
 class QudsDigitalClockViewer extends StatefulWidget {
@@ -37,6 +37,12 @@ class QudsDigitalClockViewer extends StatefulWidget {
   /// The digits boxes color.
   final Color? backgroundColor;
 
+  /// The text style of the separator
+  final TextStyle separatorStyle;
+
+  /// Set separator symbol
+  final String separator;
+
   /// Create an instance of [QudsDigitalClockViewer]
   const QudsDigitalClockViewer(
       {Key? key,
@@ -50,7 +56,9 @@ class QudsDigitalClockViewer extends StatefulWidget {
       this.timePeriodStyle = const TextStyle(fontSize: 18),
       this.amText = 'AM',
       this.pmText = 'PM',
-      this.backgroundColor})
+      this.backgroundColor,
+      this.separatorStyle = const TextStyle(fontSize: 18, color: Colors.black),
+      this.separator = ':'})
       : super(key: key);
 
   @override
@@ -83,6 +91,8 @@ class _State extends State<QudsDigitalClockViewer> {
       second: widget.showSeconds ? t.second : null,
       milliSecond: widget.showMilliSeconds ? t.millisecond : null,
       style: widget.style,
+      separatorStyle: widget.separatorStyle,
+      separator: widget.separator,
     );
   }
 

@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import '../quds_ui_kit.dart';
+import '../quds_ui_kit_rmx.dart';
 
 /// A digital clock viewer with digits flipping effect.
 class QudsDigitalTimeViewer extends StatelessWidget {
@@ -23,6 +23,12 @@ class QudsDigitalTimeViewer extends StatelessWidget {
 
   /// The digits boxes color.
   final Color? backgroundColor;
+
+  /// The text style of the separator
+  final TextStyle separatorStyle;
+
+  /// Set separator symbol
+  final String separator;
 
   /// The hour component value, if set to [null], will not be shown.
   final int? hour;
@@ -50,7 +56,10 @@ class QudsDigitalTimeViewer extends StatelessWidget {
       this.timePeriodStyle = const TextStyle(fontSize: 24),
       this.style =
           const TextStyle(fontSize: 24, letterSpacing: 3, color: Colors.white),
-      this.backgroundColor})
+      this.backgroundColor,
+      this.separatorStyle =
+          const TextStyle(fontSize: 24, letterSpacing: 3, color: Colors.black),
+      this.separator = ':'})
       : assert(hour == null || (hour >= 0 && hour < 24)),
         assert(minute == null || (minute >= 0 && minute < 60)),
         assert(second == null || (second >= 0 && second < 60)),
@@ -78,9 +87,9 @@ class QudsDigitalTimeViewer extends StatelessWidget {
           if (hour != null)
             _buildNumberBlock(
                 context, format24 ? hour! : (hour! <= 12 ? hour! : hour! - 12)),
-          if (hour != null && minute != null) _buildDotsSeperator(),
+          if (hour != null && minute != null) _buildDotsSeperator(separator),
           if (minute != null) _buildNumberBlock(context, minute!),
-          if (minute != null && second != null) _buildDotsSeperator(),
+          if (minute != null && second != null) _buildDotsSeperator(separator),
           if (second != null) _buildNumberBlock(context, second!),
           if (second != null && milliSecond != null) _buildDotsSeperator('.'),
           if (milliSecond != null) _buildNumberBlock(context, milliSecond!, 3),
@@ -93,10 +102,7 @@ class QudsDigitalTimeViewer extends StatelessWidget {
       alignment: Alignment.center,
       child: Text(
         ' $seperator ',
-        style: TextStyle(
-            fontSize: style.fontSize,
-            letterSpacing: -2,
-            fontWeight: FontWeight.bold),
+        style: separatorStyle,
       ));
 
   Widget _buildNumberBlock(BuildContext context, int number, [int? length]) {

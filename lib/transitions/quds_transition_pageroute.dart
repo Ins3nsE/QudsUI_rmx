@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:quds_ui_kit/quds_ui_kit.dart';
+import 'package:quds_ui_kit_rmx/quds_ui_kit_rmx.dart';
 
 /// Page route with combined transition with ability to customize.
 class QudsTransitionPageRoute<T> extends PageRoute<T> {

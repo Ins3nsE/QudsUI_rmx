@@ -1,6 +1,6 @@
 import 'dart:ui';
 import 'package:flutter/material.dart';
-import 'package:quds_ui_kit/animations/quds_animations.dart';
+import 'package:quds_ui_kit_rmx/animations/quds_animations.dart';
 
 /// Show confirmation delete dialog with two actions `Delete` - `Cancel`.
 Future<void> showQudsConfirmDeleteDialog(BuildContext context,

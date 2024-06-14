@@ -1,8 +1,8 @@
 import 'dart:math';
 
 import 'package:flutter/material.dart';
-import 'package:quds_ui_kit/animations/quds_animated_combined_icons.dart';
-import 'package:quds_ui_kit/buttons/quds_buttons.dart';
+import 'package:quds_ui_kit_rmx/animations/quds_animated_combined_icons.dart';
+import 'package:quds_ui_kit_rmx/buttons/quds_buttons.dart';
 
 /// An animated combined icons button.
 class QudsAnimatedCombinedIconsButton extends StatelessWidget {

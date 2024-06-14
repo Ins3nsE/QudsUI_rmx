@@ -1,6 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import '../quds_ui_kit.dart';
+import '../quds_ui_kit_rmx.dart';
 
 /// A listtile with a checkbox
 class QudsCheckboxListTile extends StatelessWidget {

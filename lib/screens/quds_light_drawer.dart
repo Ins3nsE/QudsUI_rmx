@@ -1,7 +1,7 @@
 import 'dart:math';
 import 'package:flutter/material.dart';
 
-import '../quds_ui_kit.dart';
+import '../quds_ui_kit_rmx.dart';
 
 /// A drawer with simple design.
 class QudsLightDrawer extends StatelessWidget {

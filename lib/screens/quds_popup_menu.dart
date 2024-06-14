@@ -1,7 +1,7 @@
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 
-import '../quds_ui_kit.dart';
+import '../quds_ui_kit_rmx.dart';
 
 /// A button with radian ink splash effect.
 class QudsPopupButton extends StatefulWidget {

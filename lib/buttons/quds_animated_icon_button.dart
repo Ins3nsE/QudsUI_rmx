@@ -1,6 +1,6 @@
 import 'dart:math';
 import 'package:flutter/material.dart';
-import '../quds_ui_kit.dart';
+import '../quds_ui_kit_rmx.dart';
 
 /// A flutter animated icon button
 class QudsAnimatedIconButton extends StatelessWidget {
